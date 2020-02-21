@@ -13,43 +13,43 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonAccelerometer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:text="Button" />
+            android:text="Accelerometer" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonGyroscope"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:text="Button" />
+            android:text="Gyroscope" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonMagnetometer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:text="Button" />
+            android:text="Magnetometer" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/buttonLightSensor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:text="Button" />
+            android:text="Ambient Light Sensor" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/buttonTempurature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:text="Button" />
+            android:text="Ambient Temperature" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
