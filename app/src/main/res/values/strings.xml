@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Sensor Data Logger</string>
+    <string name="sensor_data_logger">Sensor Data Logger</string>
+    <string name="accel">Accelerometer</string>
+    <string name="gyro">Gyroscope</string>
+    <string name="magnet">Magnetometer</string>
+    <string name="light">Ambient Light Sensor</string>
+    <string name="temp">Ambient Temperature</string>
+    <string name="datalabel">dataLabel</string>
+    <string name="datavalue">dataValue</string>
+    <string name="sensor_name">Sensor Name</string>
 </resources>

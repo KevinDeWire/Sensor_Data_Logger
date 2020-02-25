@@ -3,26 +3,45 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <TextView
+        android:id="@+id/textSensorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="@string/sensor_name" />
+
+    <ListView
+        android:id="@+id/sensorDataListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </ListView>
+
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
-        <TextView
-            android:id="@+id/textData"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/buttonStop"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_weight="33.3"
-            android:text="TextView"
-            android:textSize="24sp" />
+            android:paddingRight="20dp"
+            android:text="Stop" />
 
-        <TextView
-            android:id="@+id/textLabel"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/buttonStart"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="66.6"
-            android:text="TextView"
-            android:textSize="24sp" />
+            android:paddingLeft="20dp"
+            android:text="Start" />
     </TableRow>
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 </LinearLayout>

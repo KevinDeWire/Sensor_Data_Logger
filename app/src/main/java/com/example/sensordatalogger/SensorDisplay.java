@@ -8,15 +8,17 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.widget.Switch;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 class SensorDisplay extends Activity implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor mSensor;
 
-    TextView textData = findViewById(R.id.textData);
-    TextView textLabel = findViewById(R.id.textLabel);
+
 
     @Override
     public final void onCreate(Bundle savedInstanceState) {
@@ -26,13 +28,19 @@ class SensorDisplay extends Activity implements SensorEventListener {
         Intent i = getIntent();
         String sensorType = i.getStringExtra("sensorType");
 
+        ArrayList<SensorData> sensorDataList = new ArrayList<>();
+        ArrayAdapter adapter = new ArrayAdapter<>(this, R.layout.sensor_data_template, sensorDataList);
+        ListView listView = findViewById(R.id.sensorDataListView);
+        listView.setAdapter(adapter);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
         switch (sensorType){
             case "accel" :
                 mSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-                textLabel.setText("X-axis");
+                sensorDataList.add(new SensorData("0", "X-Axis"));
+                sensorDataList.add(new SensorData("0", "Y-Axis"));
+                sensorDataList.add(new SensorData("0", "Z-Axis"));
                 break;
 
             default:
