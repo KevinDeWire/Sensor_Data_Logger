@@ -20,4 +20,5 @@
             android:layout_weight="66.6"
             android:hint="@string/datalabel"
             android:textSize="24sp" />
+
     </TableRow>

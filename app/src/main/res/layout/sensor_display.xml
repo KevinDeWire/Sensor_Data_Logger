@@ -9,13 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="@string/sensor_name" />
+        android:hint="@string/sensor_name"
+        android:textSize="36sp"/>
 
     <ListView
         android:id="@+id/sensorDataListView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content">
 
     </ListView>
 
@@ -28,20 +28,20 @@
             android:id="@+id/buttonStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="20dp"
-            android:text="Stop" />
+            android:layout_weight="0.5"
+            android:text="@string/stop" />
 
         <Button
             android:id="@+id/buttonStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="Start" />
+            android:layout_weight="0.5"
+            android:text="@string/start" />
     </TableRow>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back" />
+        android:text="@string/back" />
 </LinearLayout>

@@ -1,13 +1,11 @@
 package com.example.sensordatalogger;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import static android.hardware.Sensor.TYPE_ACCELEROMETER;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +26,38 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent.putExtra("sensorType", "accel");
+                startActivity(intent);
+            }
+        });
+
+        buttonGyro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("sensorType", "gyro");
+                startActivity(intent);
+            }
+        });
+
+        buttonMagnet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("sensorType", "magnet");
+                startActivity(intent);
+            }
+        });
+
+        buttonLight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("sensorType", "light");
+                startActivity(intent);
+            }
+        });
+
+        buttonTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("sensorType", "temp");
                 startActivity(intent);
             }
         });

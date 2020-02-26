@@ -1,12 +1,15 @@
 package com.example.sensordatalogger;
 
 public class SensorData {
-    private String value;
-    private String label;
+    public String value;
+    public String label;
 
     public SensorData(String value, String label) {
         this.value = value;
         this.label = label;
+    }
+
+    public SensorData() {
     }
 
     public String getValue() {

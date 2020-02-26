@@ -9,4 +9,7 @@
     <string name="datalabel">dataLabel</string>
     <string name="datavalue">dataValue</string>
     <string name="sensor_name">Sensor Name</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="back">Back</string>
 </resources>
