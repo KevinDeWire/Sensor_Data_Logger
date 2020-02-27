@@ -31,14 +31,14 @@ Activity (Let’s call this Activity A) are:
 
 • Ambient Light Sensor -- DONE
 
-• A sensor of your choice -- DONE(Ambient Tempurature
+• A sensor of your choice -- DONE(Ambient Tempurature)
 
 3. (30 points total) Upon clicking any sensor from the list, a new activity (Let’s call this
 Activity B) is triggered. Activity B must:
 
 • Have a title that corresponds to the sensor selected from the main list (5 points) -- DONE
 
-• Have a button ‘Back’ in the bottom left corner (5 points) -- Need to move 
+• Have a button ‘Back’ in the bottom left corner (5 points) -- DONE
 
 • Hitting ‘Back’ button must take the user back to the main list of sensors (5
 points) -- DONE
