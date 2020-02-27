@@ -59,13 +59,13 @@ sample. (5 points)
 
 Timestamp, Sensor Name, Sensor Value 1, Sensor Value 2, … Sensor value n
 
-• Display a string on Activity B: “Data Recording” (5 points)
+• Display a string on Activity B: “Data Recording” (5 points) -- DONE
 
 5. (10 points total) Hitting the ‘Stop’ button must
 
 • Stop writing to the file (5 points)
 
-• Erase the ‘Data Recording’ message (5 points)
+• Erase the ‘Data Recording’ message (5 points) -- DONE
 
 6. (25 points total) If the user hits ‘Back’ in the middle of recording:
 
