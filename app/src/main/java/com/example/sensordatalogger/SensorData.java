@@ -4,14 +4,6 @@ public class SensorData {
     public String value;
     public String label;
 
-    public SensorData(String value, String label) {
-        this.value = value;
-        this.label = label;
-    }
-
-    public SensorData() {
-    }
-
     public String getValue() {
         return value;
     }
@@ -27,4 +19,5 @@ public class SensorData {
     public void setLabel(String label) {
         this.label = label;
     }
+
 }

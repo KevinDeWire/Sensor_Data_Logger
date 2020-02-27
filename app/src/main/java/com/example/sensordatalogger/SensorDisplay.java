@@ -56,35 +56,45 @@ public class SensorDisplay extends Activity {
                 sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
                 sensorManager.registerListener(mySensorEventListener, sensor,SensorManager.SENSOR_DELAY_NORMAL);
                 sensorName.setText(R.string.accel);
-                XYZ_Label();
+                if (sensorDataList.isEmpty()){
+                    XYZ_Label();
+                }
                 break;
 
             case "gyro":
                 sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
                 sensorManager.registerListener(mySensorEventListener, sensor,SensorManager.SENSOR_DELAY_NORMAL);
                 sensorName.setText(R.string.gyro);
-                XYZ_Label();
+                if (sensorDataList.isEmpty()){
+                    XYZ_Label();
+                }
                 break;
 
             case "magnet":
                 sensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
                 sensorManager.registerListener(mySensorEventListener, sensor,SensorManager.SENSOR_DELAY_NORMAL);
                 sensorName.setText(R.string.magnet);
-                XYZ_Label();
+                if (sensorDataList.isEmpty()){
+                    XYZ_Label();
+                }
                 break;
 
             case "light":
                 sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
                 sensorManager.registerListener(mySensorEventListener, sensor,SensorManager.SENSOR_DELAY_NORMAL);
                 sensorName.setText(R.string.light);
-                AddData(0, "Lux");
+                if (sensorDataList.isEmpty()){
+                    AddData(0, "Lux");
+                }
                 break;
 
             case "temp":
                 sensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
                 sensorManager.registerListener(mySensorEventListener, sensor,SensorManager.SENSOR_DELAY_NORMAL);
                 sensorName.setText(R.string.temp);
-                AddData(0, "degrees C");
+                if (sensorDataList.isEmpty()){
+                    AddData(0, "degrees C");
+                }
                 break;
 
             default:
@@ -116,6 +126,7 @@ public class SensorDisplay extends Activity {
 
     private void Single_Value(float single) {
         sensorDataList.get(0).setValue(String.valueOf(single));
+        adapter.notifyDataSetChanged();
     }
 
     private class MySensorEventListener implements SensorEventListener {
