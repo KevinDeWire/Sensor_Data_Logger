@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -30,15 +31,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="@string/stop" />
+            android:text="@string/stop"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/buttonStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="@string/start" />
+            android:text="@string/start"
+            tools:ignore="ButtonStyle" />
     </TableRow>
+
+    <TextView
+        android:id="@+id/textRecording"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/recording_message"
+        android:textSize="18dp"
+        android:visibility="invisible" />
 
     <Space
         android:layout_width="match_parent"
