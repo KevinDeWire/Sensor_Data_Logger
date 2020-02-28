@@ -50,7 +50,7 @@ in front of it (5 points) -- DONE
 
 • Have a ‘Start’ and a ‘Stop’ Button below the sensor data display (5 points) -- DONE
 
-### Need to add runtime user permission request ###
+### Need to add runtime user permission request ### -- DONE
 
 4. (15 points total) Hitting the ‘Start’ button must
 
@@ -72,13 +72,13 @@ Timestamp, Sensor Name, Sensor Value 1, Sensor Value 2, … Sensor value n -- DO
 6. (25 points total) If the user hits ‘Back’ in the middle of recording:
 
 • A dialog box must show up asking the user if they want to stop recording. (10
-points)
+points) -- DONE
 
 • If the user selects ‘Yes’, the recording is stopped (5 points) and the user is back
-to Activity A (5 points)
+to Activity A (5 points) -- DONE
 
 • If the user selects ‘No’, the user stays on Activity B and recording is not
-interrupted (5 points)
+interrupted (5 points) -- DONE
 
 Graduate students’ additional requirements [20 points total]
 
