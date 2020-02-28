@@ -13,4 +13,5 @@
     <string name="stop">Stop</string>
     <string name="back">Back</string>
     <string name="recording_message">Data Recording</string>
+    <string name="permission_denied">External Storage Permission Required</string>
 </resources>
