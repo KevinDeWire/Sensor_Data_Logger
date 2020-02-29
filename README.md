@@ -31,7 +31,7 @@ Activity (Let’s call this Activity A) are:
 
 • Ambient Light Sensor -- DONE
 
-• A sensor of your choice -- DONE(Ambient Tempurature)
+• A sensor of your choice -- DONE  (Ambient Tempurature)
 
 3. (30 points total) Upon clicking any sensor from the list, a new activity (Let’s call this
 Activity B) is triggered. Activity B must:
@@ -50,33 +50,35 @@ in front of it (5 points) -- DONE
 
 • Have a ‘Start’ and a ‘Stop’ Button below the sensor data display (5 points) -- DONE
 
+### Need to add runtime user permission request ### -- DONE
+
 4. (15 points total) Hitting the ‘Start’ button must
 
-• Create a .txt or .csv file on the device’s storage (5 points)
+• Create a .txt or .csv file on the device’s storage (5 points) -- DONE
 
 • Write data to this file in the following format. There must be one row for each
 sample. (5 points)
 
-Timestamp, Sensor Name, Sensor Value 1, Sensor Value 2, … Sensor value n
+Timestamp, Sensor Name, Sensor Value 1, Sensor Value 2, … Sensor value n -- DONE
 
-• Display a string on Activity B: “Data Recording” (5 points)
+• Display a string on Activity B: “Data Recording” (5 points) -- DONE
 
 5. (10 points total) Hitting the ‘Stop’ button must
 
-• Stop writing to the file (5 points)
+• Stop writing to the file (5 points) -- DONE
 
-• Erase the ‘Data Recording’ message (5 points)
+• Erase the ‘Data Recording’ message (5 points) -- DONE
 
 6. (25 points total) If the user hits ‘Back’ in the middle of recording:
 
 • A dialog box must show up asking the user if they want to stop recording. (10
-points)
+points) -- DONE
 
 • If the user selects ‘Yes’, the recording is stopped (5 points) and the user is back
-to Activity A (5 points)
+to Activity A (5 points) -- DONE
 
 • If the user selects ‘No’, the user stays on Activity B and recording is not
-interrupted (5 points)
+interrupted (5 points) -- DONE
 
 Graduate students’ additional requirements [20 points total]
 
