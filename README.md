@@ -80,7 +80,7 @@ to Activity A (5 points) -- DONE
 • If the user selects ‘No’, the user stays on Activity B and recording is not
 interrupted (5 points) -- DONE
 
-Graduate students’ additional requirements [20 points total]
+Graduate students’ additional requirements [20 points total] -- DONE
 
 Add a third button to Activity B “Record Event”. When the user hits this button, the timestamp
 is logged in the same .txt or .csv file in the following format:
