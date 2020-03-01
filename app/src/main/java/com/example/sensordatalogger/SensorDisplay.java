@@ -1,9 +1,11 @@
 package com.example.sensordatalogger;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,13 +18,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 public class SensorDisplay extends Activity {
@@ -34,6 +38,19 @@ public class SensorDisplay extends Activity {
     Boolean recording;
     File outputFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "sensorData.csv");
 
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            int PERMISSION_REQUEST_CODE = 42;
+            ActivityCompat.requestPermissions(this,PERMISSIONS_STORAGE, PERMISSION_REQUEST_CODE);
+        }
+    }
 
     public final void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +62,7 @@ public class SensorDisplay extends Activity {
         Button startButton = findViewById(R.id.buttonStart);
         Button stopButton = findViewById(R.id.buttonStop);
         Button backButton = findViewById(R.id.buttonBack);
+        Button eventButton = findViewById(R.id.buttonEvent);
         final TextView recordingText = findViewById(R.id.textRecording);
 
         recording = false;
@@ -64,11 +82,23 @@ public class SensorDisplay extends Activity {
             }
         });
 
+
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recordingText.setVisibility(View.INVISIBLE);
                 recording = false;
+            }
+        });
+
+        eventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (recording){
+                    StringBuilder output = new StringBuilder();
+                    output.append(TimeStamp()).append(", Event\n");
+                    OutputFile(output.toString());
+                }
             }
         });
 
@@ -186,10 +216,9 @@ public class SensorDisplay extends Activity {
     }
 
     private void XYZ_Output(float x, float y, float z) {
-        Date timestamp = Calendar.getInstance().getTime();
         TextView sensorName = findViewById(R.id.textSensorName);
         StringBuilder output = new StringBuilder();
-        output.append(timestamp.toString()).append(", ").append(sensorName.getText()).append(", ").append(x).append(", ").append(y).append(", ").append(z).append("\n");
+        output.append(TimeStamp()).append(", ").append(sensorName.getText()).append(", ").append(x).append(", ").append(y).append(", ").append(z).append("\n");
         OutputFile(output.toString());
     }
 
@@ -202,10 +231,9 @@ public class SensorDisplay extends Activity {
     }
 
     private void Single_Output(float single) {
-        Date timestamp = Calendar.getInstance().getTime();
         TextView sensorName = findViewById(R.id.textSensorName);
         StringBuilder output = new StringBuilder();
-        output.append(timestamp.toString()).append(", ").append(sensorName.getText()).append(", ").append(single).append("\n");
+        output.append(TimeStamp()).append(", ").append(sensorName.getText()).append(", ").append(single).append("\n");
         OutputFile(output.toString());
     }
 
@@ -219,6 +247,12 @@ public class SensorDisplay extends Activity {
                 e.printStackTrace();
             }
         }
+    }
+
+    private String TimeStamp(){
+        String pattern = "MM-dd-yyyy HH:mm:ss:SSS";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        return simpleDateFormat.format(new Date());
     }
 
     private class MySensorEventListener implements SensorEventListener {

@@ -30,15 +30,22 @@
             android:id="@+id/buttonStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.33"
             android:text="@string/stop"
             tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/buttonEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="@string/record_event" />
 
         <Button
             android:id="@+id/buttonStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.33"
             android:text="@string/start"
             tools:ignore="ButtonStyle" />
     </TableRow>
@@ -49,7 +56,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/recording_message"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:visibility="invisible" />
 
     <Space
